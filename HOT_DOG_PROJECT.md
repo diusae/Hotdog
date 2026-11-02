@@ -171,6 +171,7 @@ Only after the baseline is verified and identity dependencies are mapped:
 - [x] Refresh shared window title bar dimensions, controls and HOT DOG monogram.
 - [x] Refresh Client top navigation and multi-client tab strip proportions.
 - [x] Rebuild Manager primary navigation as a dedicated left sidebar.
+- [x] Move the Manager Launcher title and process labels to the central HOT DOG identity.
 - [x] Add a documented shared design system in `HOT_DOG_DESIGN_SYSTEM.md`.
 - [ ] Build and visually verify the design-foundation change on Windows.
 - [ ] Create original native app, tray and installer icon assets.
@@ -186,4 +187,4 @@ Only after the baseline is verified and identity dependencies are mapped:
 
 ## 10. Current status
 
-The user confirmed the original baseline Release build succeeds and the first visible-label rebrand opens in both Client and Manager. The current branch now includes the first full design-foundation pass: shared dark/light colour tokens, updated reusable control styles, a 40px shared title bar with an HOT DOG monogram, refreshed Client navigation sizing, and a new Manager left-sidebar layout. The design system is documented in `HOT_DOG_DESIGN_SYSTEM.md`. These latest visual changes have not yet been rebuilt or visually verified by the user. Executable/assembly identities, AppData locations and migration logic, saved themes, IPC/mutex names, temporary tab paths, plugin contracts, game workflows and update identifiers remain unchanged. Native app/tray/installer icons still require original HOT DOG assets. Individual Client and Manager pages still need screen-by-screen redesign and testing.
+The user confirmed the original baseline Release build succeeds and the first visible-label rebrand opens in both Client and Manager. The current branch now includes the first full design-foundation pass: shared dark/light colour tokens, updated reusable control styles, a 40px shared title bar with an HOT DOG monogram, refreshed Client navigation sizing, and a new Manager left-sidebar layout. The design system is documented in `HOT_DOG_DESIGN_SYSTEM.md`. Manager Launcher page headings and process labels now also resolve to HOT DOG display identity. These latest visual changes have not yet been rebuilt or visually verified by the user. Executable/assembly identities, AppData locations and migration logic, saved themes, IPC/mutex names, temporary tab paths, plugin contracts, game workflows and update identifiers remain unchanged. Native app/tray/installer icons still require original HOT DOG assets. Individual Client and Manager pages still need screen-by-screen redesign and testing.
