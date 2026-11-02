@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:sharedShell="clr-namespace:Skua.Shared.Avalonia.Controls.Shell;assembly=Skua.Shared.Avalonia"
+        xmlns:models="clr-namespace:Skua.Core.Models;assembly=Skua.Core.Models"
         x:Class="Skua.Manager.Avalonia.Views.MainWindow"
         Classes="skua"
         d:DesignWidth="1080"
@@ -10,6 +11,8 @@
         Title="{Binding Title}"
         Width="1080"
         Height="700"
+        MinWidth="900"
+        MinHeight="600"
         WindowStartupLocation="CenterScreen"
         Icon="avares://Skua.Shared.Avalonia/Assets/SkuaIcon.ico"
         SystemDecorations="BorderOnly"
@@ -17,55 +20,87 @@
         ExtendClientAreaChromeHints="NoChrome"
         ExtendClientAreaTitleBarHeightHint="40">
 
-    <!-- This root class enables shared shell selectors from Theme.axaml (Window.skua ...). -->
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
+    <Grid RowDefinitions="40,*">
         <sharedShell:WindowTitleBar Grid.Row="0"
                                     x:Name="TitleBar"
                                     TitleText="{Binding Title}" />
 
-        <!-- Top Nav -->
-        <DockPanel Grid.Row="1"
-                   Height="50"
-                   Margin="12,8,12,8">
-            <ListBox Classes="top-tabs-client"
-                     ItemsSource="{Binding Tabs}"
-                     SelectedItem="{Binding SelectedTab}"
-                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                     ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                     HorizontalAlignment="Stretch">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" Spacing="4" />
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Header}"
-                                   VerticalAlignment="Center"
-                                   TextAlignment="Center"
-                                   Margin="14,0"
-                                   Padding="0" />
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </DockPanel>
+        <Grid Grid.Row="1" ColumnDefinitions="216,*">
+            <!-- Persistent Manager navigation -->
+            <Border Grid.Column="0"
+                    Background="{DynamicResource SkuaSidebarBrush}"
+                    BorderBrush="{DynamicResource SkuaBorderBrush}"
+                    BorderThickness="0,0,1,0">
+                <Grid RowDefinitions="Auto,*,Auto">
+                    <StackPanel Grid.Row="0" Margin="18,20,18,16" Spacing="5">
+                        <TextBlock Text="WORKSPACE"
+                                   FontSize="10"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource SkuaAccentBrush}" />
+                        <TextBlock Text="Navigation"
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource SkuaTextBrush}" />
+                        <TextBlock Text="Manage your clients and tools"
+                                   FontSize="11"
+                                   Foreground="{DynamicResource SkuaMutedTextBrush}" />
+                    </StackPanel>
 
-        <!-- Content Area -->
-        <ContentControl Grid.Row="2"
-                        Margin="4,2,4,4"
-                        Content="{Binding SelectedTab.Content}"
-                        HorizontalAlignment="Stretch"
-                        VerticalAlignment="Stretch" />
+                    <ListBox Grid.Row="1"
+                             Classes="manager-sidebar"
+                             ItemsSource="{Binding Tabs}"
+                             SelectedItem="{Binding SelectedTab}"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical" Spacing="3" />
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="3,*" ColumnSpacing="11">
+                                    <Border x:Name="NavIndicator"
+                                            Width="3"
+                                            CornerRadius="2"
+                                            Background="Transparent"
+                                            VerticalAlignment="Stretch" />
+                                    <TextBlock Grid.Column="1"
+                                               Text="{Binding Header}"
+                                               VerticalAlignment="Center"
+                                               TextTrimming="CharacterEllipsis"
+                                               FontSize="12.5"
+                                               FontWeight="SemiBold" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <Border Grid.Row="2"
+                            BorderBrush="{DynamicResource SkuaDividerBrush}"
+                            BorderThickness="0,1,0,0"
+                            Padding="18,12">
+                        <StackPanel Spacing="2">
+                            <TextBlock Text="{x:Static models:ProductIdentity.ManagerName}"
+                                       FontSize="11"
+                                       FontWeight="Bold"
+                                       Foreground="{DynamicResource SkuaTextBrush}" />
+                            <TextBlock Text="Control Center"
+                                       FontSize="10"
+                                       Foreground="{DynamicResource SkuaMutedTextBrush}" />
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+
+            <!-- Active Manager page -->
+            <Border Grid.Column="1"
+                    Background="{DynamicResource SkuaPageBrush}">
+                <ContentControl Margin="18,16,18,18"
+                                Content="{Binding SelectedTab.Content}"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch" />
+            </Border>
+        </Grid>
     </Grid>
-
 </Window>
-
-
-
-
