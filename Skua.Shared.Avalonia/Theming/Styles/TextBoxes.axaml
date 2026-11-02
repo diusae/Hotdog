@@ -22,7 +22,7 @@
         <Setter Property="Foreground" Value="{DynamicResource SkuaTextBrush}" />
         <Setter Property="CaretBrush" Value="{DynamicResource SkuaTextBrush}" />
         <Setter Property="SelectionBrush" Value="{DynamicResource SkuaSelectionBrush}" />
-        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontSize" Value="12.5" />
         <Setter Property="FontWeight" Value="Medium" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
