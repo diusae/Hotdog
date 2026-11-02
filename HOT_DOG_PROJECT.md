@@ -87,6 +87,19 @@ Core script functionality is primarily under `Skua.Core/Scripts`. Plugin loading
 
 Client-owned files/directories are initialized through `ClientFileSources` and `Skua.Core/Services/ClientFilesService.cs`. Any future branding or product-identity migration must first inspect how these paths are derived, so existing settings, scripts, plugins, themes and user data are not orphaned.
 
+### Initial product-identity and data-compatibility map
+
+The first read-only identity audit found several coupled identifiers. They must not be changed as one blind rename:
+
+- The client window and tabbed host display the product name in `Skua.App.Avalonia/Views/TabbedHostWindow.axaml`; the current window and title-bar text are both `VibeSkua`.
+- The client executable and assembly are currently `VibeSkua.exe` / `VibeSkua`. The Manager's `SkuaExecutableLocator` explicitly searches for `VibeSkua.exe`, with `Skua.exe` as a legacy fallback.
+- The client project declares assembly metadata `Skua.ClientId=VibeSkuaAvalonia`.
+- The tabbed-host single-instance and inter-process communication names are currently `VibeSkuaTabHostPipe` and `VibeSkuaTabHostMutex`; per-instance names are derived from these.
+- Client data currently lives under `%APPDATA%\\VibeSkua`. The code can copy legacy data from `%APPDATA%\\Skua` into that directory on first initialization, guarded by `Global\\VibeSkua.Migration.Init` and a migration marker. The existing migration excludes the top-level `plugins` directory from that copy.
+- User data includes settings, scripts, themes, options, plugins and supporting JSON/cache files. A future move to a `HotDog` data directory must explicitly preserve existing VibeSkua data and account for the existing legacy Skua migration; simply changing the folder constant would risk making the user's existing setup appear empty.
+
+**Safe first identity milestone:** change only user-visible product labels and brand artwork after their exact locations are mapped. Keep executable names, assembly identities, AppData paths, IPC/mutex names, plugin contracts and update identifiers unchanged during that first step. Plan and test any deeper identity migration separately.
+
 ## 6. Build and safety notes
 
 The README documents this manual build command:
@@ -126,7 +139,7 @@ Before distributing Hot Dog binaries or source, inspect the upstream and inherit
 - [x] Create a dedicated development branch.
 - [x] Record the first-pass solution architecture.
 - [ ] Inspect the full startup path and process/IPC lifecycle.
-- [ ] Map persistent data paths and settings migration risks.
+- [x] Map persistent data paths and the initial settings migration risks; deeper migration testing remains required.
 - [ ] Map script lifecycle and plugin lifecycle in detail.
 
 ### Phase 1 — Local baseline verification
@@ -139,7 +152,7 @@ Before distributing Hot Dog binaries or source, inspect the upstream and inherit
 - [ ] Verify a minimal existing workflow before changing code.
 
 ### Phase 2 — First Hot Dog identity changes
-Only after the baseline is verified:
+Only after the baseline is verified and identity dependencies are mapped:
 - [ ] Define a central product identity/configuration.
 - [ ] Plan safe application display-name and icon changes.
 - [ ] Plan settings/data directory compatibility.
