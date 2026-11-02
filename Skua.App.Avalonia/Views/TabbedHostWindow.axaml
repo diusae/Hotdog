@@ -14,8 +14,8 @@
         SystemDecorations="BorderOnly"
         ExtendClientAreaToDecorationsHint="True"
         ExtendClientAreaChromeHints="NoChrome"
-        ExtendClientAreaTitleBarHeightHint="32">
-    <Grid RowDefinitions="32,Auto,*">
+        ExtendClientAreaTitleBarHeightHint="40">
+    <Grid RowDefinitions="40,Auto,*">
         <sharedShell:WindowTitleBar x:Name="MainTitleBar" Grid.Row="0" TitleText="{x:Static models:ProductIdentity.ProductName}" />
 
         <!-- Top Tab Bar & Army Bar -->
@@ -23,7 +23,7 @@
                 Background="{DynamicResource SkuaSurfaceBrush}"
                 BorderBrush="{DynamicResource SkuaBorderBrush}"
                 BorderThickness="0,0,0,1"
-                Height="36">
+                Height="40">
             <Grid ColumnDefinitions="*,Auto,Auto">
                 
                 <!-- Client Tabs Bar with Left/Right Scroll Indicators -->
