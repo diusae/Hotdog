@@ -108,8 +108,9 @@
     </Style>
 
     <Style Selector="Border.titlebar-app-badge">
-        <Setter Property="Background" Value="{DynamicResource SkuaAccentTintBrush}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource SkuaAccentBrush}" />
+        <Setter Property="Background" Value="{DynamicResource SkuaAccentBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SkuaAccentHoverBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
     </Style>
     
     <Style Selector="Border.option-pill-container">
