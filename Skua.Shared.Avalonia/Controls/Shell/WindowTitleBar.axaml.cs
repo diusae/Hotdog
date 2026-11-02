@@ -5,7 +5,6 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
-using Avalonia.Platform;
 using Material.Icons;
 using Material.Icons.Avalonia;
 using System;
@@ -18,7 +17,6 @@ public partial class WindowTitleBar : UserControl
     public static readonly StyledProperty<string> TitleTextProperty =
         AvaloniaProperty.Register<WindowTitleBar, string>(nameof(TitleText), ProductIdentity.ProductName);
 
-    private static readonly IImage DefaultIconSource = LoadDefaultIconSource();
     private static string? _artworkPath;
     private Bitmap? _artworkBitmap;
     private bool _usesInstanceArtwork;
@@ -38,7 +36,7 @@ public partial class WindowTitleBar : UserControl
     }
 
     public static readonly StyledProperty<IImage?> IconSourceProperty =
-        AvaloniaProperty.Register<WindowTitleBar, IImage?>(nameof(IconSource), DefaultIconSource);
+        AvaloniaProperty.Register<WindowTitleBar, IImage?>(nameof(IconSource), null);
 
     public static readonly StyledProperty<bool> UseAccentBackgroundProperty =
         AvaloniaProperty.Register<WindowTitleBar, bool>(nameof(UseAccentBackground), false);
@@ -214,12 +212,4 @@ public partial class WindowTitleBar : UserControl
             window.Close();
     }
 
-    private static IImage LoadDefaultIconSource()
-    {
-        // Keep shell icon parity with WPF title bar artwork so badge tint behavior matches.
-        using var stream = AssetLoader.Open(new Uri("avares://Skua.Shared.Avalonia/Assets/SkuaShellImage.png"));
-        // The source is 2000x2000 but drawn at 30 DIP; decoding at full size and letting the renderer
-        // shrink it 60x+ aliases badly, so pre-scale (128 px covers up to 400% DPI).
-        return Bitmap.DecodeToWidth(stream, 128, BitmapInterpolationMode.HighQuality);
-    }
 }
