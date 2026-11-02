@@ -8,6 +8,7 @@ namespace Skua.Core.Models;
 public static class ProductIdentity
 {
     public const string ProductName = "HOT DOG";
+    public const string ProductMonogram = "HD";
     public const string ManagerName = ProductName + " Manager";
     public const string ClientMenuName = ProductName + " Client";
     public const string AboutTitle = "About " + ProductName;
