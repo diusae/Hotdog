@@ -35,12 +35,21 @@
               Height="32"
               Classes="titlebar-app-badge"
               CornerRadius="9" />
+      <Image Source="{Binding IconSource, ElementName=Root}"
+             Width="24"
+             Height="24"
+             Stretch="Uniform"
+             RenderOptions.BitmapInterpolationMode="HighQuality"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             IsVisible="{Binding IconSource, ElementName=Root, Converter={x:Static ObjectConverters.IsNotNull}}" />
       <TextBlock Text="{x:Static models:ProductIdentity.ProductMonogram}"
                  Foreground="{DynamicResource SkuaAccentForegroundBrush}"
                  FontSize="11"
                  FontWeight="Bold"
                  HorizontalAlignment="Center"
-                 VerticalAlignment="Center" />
+                 VerticalAlignment="Center"
+                 IsVisible="{Binding IconSource, ElementName=Root, Converter={x:Static ObjectConverters.IsNull}}" />
     </Grid>
 
     <TextBlock x:Name="TitleTextBlock"
