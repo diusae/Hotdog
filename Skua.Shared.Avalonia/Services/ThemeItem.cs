@@ -10,8 +10,8 @@ public class ThemeItem
     public string Name { get; set; } = ProductIdentity.DefaultThemeName;
     public bool IsDarkTheme { get; set; } = true;
     public Color PrimaryColor { get; set; } = Color.Parse(ProductIdentity.PrimaryAccentHex);
-    public Color SecondaryColor { get; set; } = Color.Parse("#FF607D8B");
-    public Color PrimaryForegroundColor { get; set; } = Color.Parse("#FF000000");
+    public Color SecondaryColor { get; set; } = Color.Parse(ProductIdentity.SecondaryAccentHex);
+    public Color PrimaryForegroundColor { get; set; } = Color.Parse(ProductIdentity.AccentForegroundHex);
     public Color SecondaryForegroundColor { get; set; } = Color.Parse("#FF000000");
     public bool UseColorAdjustment { get; set; } = false;
     public float DesiredContrastRatio { get; set; } = 4.5f;
