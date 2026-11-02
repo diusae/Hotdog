@@ -39,7 +39,7 @@ public class ThemeItem
         {
             Name = parts[0],
             IsDarkTheme = parts[1].Equals("Dark", StringComparison.OrdinalIgnoreCase),
-            PrimaryColor = ParseColorOrDefault(parts[2], Color.Parse(ProductIdentity.SecondaryAccentHex)),
+            PrimaryColor = ParseColorOrDefault(parts[2], Color.Parse(ProductIdentity.PrimaryAccentHex)),
             SecondaryColor = ParseColorOrDefault(parts[3], Color.Parse(ProductIdentity.SecondaryAccentHex)),
             PrimaryForegroundColor = ParseColorOrDefault(parts[4], Color.Parse(ProductIdentity.AccentForegroundHex)),
             SecondaryForegroundColor = ParseColorOrDefault(parts[5], Color.Parse(ProductIdentity.AccentForegroundHex))
