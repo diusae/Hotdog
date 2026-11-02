@@ -76,7 +76,7 @@
                         <Border Background="{DynamicResource SkuaSurfaceBrush}"
                                 BorderBrush="{DynamicResource SkuaBorderBrush}"
                                 BorderThickness="1"
-                                CornerRadius="8"
+                                CornerRadius="10"
                                 Padding="4"
                                 Margin="0,4,0,0"
                                 BoxShadow="0 8 24 #30000000">
