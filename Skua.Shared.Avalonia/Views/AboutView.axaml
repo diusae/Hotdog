@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vms="clr-namespace:Skua.Shared.Avalonia.ViewModels;assembly=Skua.Shared.Avalonia"
              xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:models="clr-namespace:Skua.Core.Models;assembly=Skua.Core.Models"
              x:Class="Skua.Shared.Avalonia.Views.AboutView"
              x:DataType="vms:AboutViewModel"
              d:DesignHeight="700" d:DesignWidth="600"
@@ -26,7 +27,7 @@
                     <TextBlock FontSize="16"
                                FontWeight="Bold"
                                Foreground="{DynamicResource SkuaTextBrush}"
-                               Text="About HOT DOG" />
+                               Text="{x:Static models:ProductIdentity.AboutTitle}" />
                 </StackPanel>
                 <materialIcons:MaterialIcon Grid.Column="1"
                                             Kind="Information"
