@@ -3,32 +3,40 @@
              xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              x:Name="Root"
              x:Class="Skua.Shared.Avalonia.Controls.Shell.WindowTitleBar">
-  <Grid Height="32"
-        Background="{DynamicResource SkuaSurfaceAltBrush}">
+  <Grid Height="40"
+        Background="{DynamicResource SkuaSurfaceBrush}">
+    <Image x:Name="ArtworkImage" Grid.ColumnSpan="3" Stretch="UniformToFill" Opacity="0.16" IsHitTestVisible="False" />
     <Border Grid.ColumnSpan="3"
-            Background="{DynamicResource SkuaAccentBrush}"
-            IsVisible="{Binding UseAccentBackground, ElementName=Root}"
+            Background="{DynamicResource SkuaTitleBarOverlayBrush}"
             IsHitTestVisible="False" />
-    <Image x:Name="ArtworkImage" Grid.ColumnSpan="3" Stretch="UniformToFill" Opacity="0.62" IsHitTestVisible="False" />
-    <Border Grid.ColumnSpan="3" Background="{DynamicResource SkuaTitleBarOverlayBrush}" IsHitTestVisible="False" />
+    <Border Grid.ColumnSpan="3"
+            Height="1"
+            VerticalAlignment="Bottom"
+            Background="{DynamicResource SkuaBorderBrush}"
+            IsHitTestVisible="False" />
+    <Border Width="3"
+            HorizontalAlignment="Left"
+            Background="{DynamicResource SkuaAccentBrush}"
+            IsHitTestVisible="False" />
     <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="48" />
       <ColumnDefinition Width="*" />
       <ColumnDefinition Width="Auto" />
     </Grid.ColumnDefinitions>
 
     <Grid Grid.Column="0"
-          Width="30"
-          Height="30"
-          Margin="6,0"
-          HorizontalAlignment="Center">
-      <Border Width="30"
-              Height="30"
+          Width="32"
+          Height="32"
+          Margin="9,0,5,0"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center">
+      <Border Width="32"
+              Height="32"
               Classes="titlebar-app-badge"
-              CornerRadius="15" />
+              CornerRadius="9" />
       <Image Source="{Binding IconSource, ElementName=Root}"
-             Width="30"
-             Height="30"
+             Width="24"
+             Height="24"
              Stretch="Uniform"
              RenderOptions.BitmapInterpolationMode="HighQuality"
              HorizontalAlignment="Center"
@@ -37,28 +45,25 @@
 
     <TextBlock x:Name="TitleTextBlock"
                Grid.Column="1"
-               Margin="6,0,8,0"
+               Margin="8,0,8,0"
                VerticalAlignment="Center"
                Text="{Binding TitleText, ElementName=Root}"
                TextTrimming="CharacterEllipsis"
                Classes="titlebar-title" />
 
     <StackPanel Grid.Column="2"
-                Height="28"
-                VerticalAlignment="Top"
+                Height="40"
+                VerticalAlignment="Center"
                 Orientation="Horizontal">
       <Button x:Name="MinimizeButton"
               Classes="titlebar"
-              Content="{materialIcons:MaterialIconExt Kind=WindowMinimize, IconSize=12}" />
+              Content="{materialIcons:MaterialIconExt Kind=WindowMinimize, IconSize=13}" />
       <Button x:Name="MaximizeButton"
               Classes="titlebar"
-              Content="{materialIcons:MaterialIconExt Kind=WindowMaximize, IconSize=12}" />
+              Content="{materialIcons:MaterialIconExt Kind=WindowMaximize, IconSize=13}" />
       <Button x:Name="CloseButton"
               Classes="titlebar titlebar-close"
-              Content="{materialIcons:MaterialIconExt Kind=WindowClose, IconSize=12}" />
+              Content="{materialIcons:MaterialIconExt Kind=WindowClose, IconSize=13}" />
     </StackPanel>
   </Grid>
 </UserControl>
-
-
-
