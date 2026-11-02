@@ -2,6 +2,7 @@ using CommunityToolkit.Mvvm.Input;
 using Avalonia.Threading;
 using Skua.Core.Interfaces;
 using Skua.Core.Utils;
+using Skua.Core.Models;
 
 namespace Skua.Shared.Avalonia.ViewModels;
 
@@ -52,7 +53,7 @@ public class AboutViewModel : BotControlViewModelBase
 
     private async Task GetAboutContent()
     {
-        MarkdownDoc = @"# HOT DOG
+        MarkdownDoc = $@"# {ProductIdentity.ProductName}
 > **Note:** This project is **Vibe Coded**—built entirely through AI-assisted development, and pure momentum.
 
 A feature-rich, high-performance derivative of auqw/skua, engineered for advanced automation, stability, and streamlined multi-client management.
