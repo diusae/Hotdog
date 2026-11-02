@@ -9,13 +9,14 @@ using Avalonia.Platform;
 using Material.Icons;
 using Material.Icons.Avalonia;
 using System;
+using Skua.Core.Models;
 
 namespace Skua.Shared.Avalonia.Controls.Shell;
 
 public partial class WindowTitleBar : UserControl
 {
     public static readonly StyledProperty<string> TitleTextProperty =
-        AvaloniaProperty.Register<WindowTitleBar, string>(nameof(TitleText), "HOT DOG");
+        AvaloniaProperty.Register<WindowTitleBar, string>(nameof(TitleText), ProductIdentity.ProductName);
 
     private static readonly IImage DefaultIconSource = LoadDefaultIconSource();
     private static string? _artworkPath;
