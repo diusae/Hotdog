@@ -6,12 +6,12 @@
         Text on Primary -> SkuaAccentForegroundColor / SkuaAccentForegroundBrush
         These are updated at runtime by ThemeResourceApplicator via theme editor selections. -->
     
-    <Color x:Key="SkuaAccentColor">#10B981</Color>
-    <Color x:Key="SkuaAccentForegroundColor">#FFFFFFFF</Color>
+    <Color x:Key="SkuaAccentColor">#F97316</Color>
+    <Color x:Key="SkuaAccentForegroundColor">#FF111111</Color>
     <SolidColorBrush x:Key="SkuaAccentBrush" Color="{StaticResource SkuaAccentColor}" />
     <SolidColorBrush x:Key="SkuaAccentForegroundBrush" Color="{StaticResource SkuaAccentForegroundColor}" />
-    <SolidColorBrush x:Key="SkuaAccentHoverBrush" Color="#059669" />
-    <SolidColorBrush x:Key="SkuaAccentPressedBrush" Color="#047857" />
+    <SolidColorBrush x:Key="SkuaAccentHoverBrush" Color="#EA580C" />
+    <SolidColorBrush x:Key="SkuaAccentPressedBrush" Color="#C2410C" />
     <SolidColorBrush x:Key="SkuaDangerBrush" Color="#EF4444" />
     <SolidColorBrush x:Key="SkuaDangerHoverBrush" Color="#DC2626" />
     <SolidColorBrush x:Key="SkuaDangerPressedBrush" Color="#B91C1C" />
@@ -19,22 +19,22 @@
 
     <!-- Fluent reads these for CheckBox, RadioButton, Slider, ProgressBar, TabItem pipe, TextBox focus.
          ThemeResourceApplicator overwrites them with the user's primary colour at startup. -->
-    <Color x:Key="SystemAccentColor">#10B981</Color>
-    <Color x:Key="SystemAccentColorLight1">#28C08E</Color>
-    <Color x:Key="SystemAccentColorLight2">#40C79A</Color>
-    <Color x:Key="SystemAccentColorLight3">#58CEA7</Color>
-    <Color x:Key="SystemAccentColorDark1">#0E9D6E</Color>
-    <Color x:Key="SystemAccentColorDark2">#0B825A</Color>
-    <Color x:Key="SystemAccentColorDark3">#096647</Color>
-    <SolidColorBrush x:Key="SkuaTagBackgroundBrush" Color="#2210B981" />
-    <SolidColorBrush x:Key="SkuaTagBackgroundHoverBrush" Color="#3B10B981" />
-    <SolidColorBrush x:Key="SkuaTagBorderBrush" Color="#4D10B981" />
-    <SolidColorBrush x:Key="SkuaTagBorderHoverBrush" Color="#8010B981" />
-    <SolidColorBrush x:Key="SkuaTagTextBrush" Color="#34D399" />
+    <Color x:Key="SystemAccentColor">#F97316</Color>
+    <Color x:Key="SystemAccentColorLight1">#FB923C</Color>
+    <Color x:Key="SystemAccentColorLight2">#FDBA74</Color>
+    <Color x:Key="SystemAccentColorLight3">#FED7AA</Color>
+    <Color x:Key="SystemAccentColorDark1">#EA580C</Color>
+    <Color x:Key="SystemAccentColorDark2">#C2410C</Color>
+    <Color x:Key="SystemAccentColorDark3">#9A3412</Color>
+    <SolidColorBrush x:Key="SkuaTagBackgroundBrush" Color="#22F97316" />
+    <SolidColorBrush x:Key="SkuaTagBackgroundHoverBrush" Color="#3BF97316" />
+    <SolidColorBrush x:Key="SkuaTagBorderBrush" Color="#4DF97316" />
+    <SolidColorBrush x:Key="SkuaTagBorderHoverBrush" Color="#80F97316" />
+    <SolidColorBrush x:Key="SkuaTagTextBrush" Color="#FDBA74" />
 
     <!-- Selected and on states: accent tint fill plus accent border. ThemeResourceApplicator derives these from the primary. -->
-    <SolidColorBrush x:Key="SkuaAccentTintBrush" Color="#2410B981" />
-    <SolidColorBrush x:Key="SkuaAccentTintStrongBrush" Color="#3810B981" />
+    <SolidColorBrush x:Key="SkuaAccentTintBrush" Color="#24F97316" />
+    <SolidColorBrush x:Key="SkuaAccentTintStrongBrush" Color="#38F97316" />
     <!-- Soft destructive buttons and the destructive icon button hover -->
     <SolidColorBrush x:Key="SkuaDangerTintBrush" Color="#1FEF4444" />
     <SolidColorBrush x:Key="SkuaDangerTintStrongBrush" Color="#33EF4444" />
