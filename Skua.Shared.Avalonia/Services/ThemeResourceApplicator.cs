@@ -7,6 +7,7 @@ using Avalonia.Threading;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using Skua.Core.Models;
 
 namespace Skua.Shared.Avalonia.Services;
 
@@ -223,7 +224,7 @@ public static class ThemeResourceApplicator
         string? accentForegroundHex = null,
         string? secondaryHex = null,
         string? secondaryForegroundHex = null,
-        string fallbackAccentHex = "#10B981",
+        string fallbackAccentHex = ProductIdentity.PrimaryAccentHex,
         bool? isDarkTheme = null)
     {
         Color primary = ParseColorSafe(accentHex, GetResourceColor(app, "SkuaAccentColor", fallbackAccentHex));
