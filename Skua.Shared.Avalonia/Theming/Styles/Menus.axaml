@@ -5,9 +5,9 @@
     <!-- Topbar Menu Container -->
     <Style Selector="Menu.top-toolbar">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Height" Value="28" />
-        <Setter Property="MinHeight" Value="28" />
-        <Setter Property="MaxHeight" Value="28" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="MinHeight" Value="30" />
+        <Setter Property="MaxHeight" Value="30" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Padding" Value="0" />
     </Style>
@@ -15,7 +15,7 @@
     <!-- Topbar Root Menu Items (Scripts, Options, Tools & Helpers, Combat, Bank, Diagnostics, Plugins) -->
     <Style Selector="Menu > MenuItem, Menu.top-toolbar > MenuItem, MenuItem.top-nav-item">
         <Setter Property="Foreground" Value="{DynamicResource SkuaTextBrush}" />
-        <Setter Property="Padding" Value="10,4" />
+        <Setter Property="Padding" Value="12,5" />
         <Setter Property="Height" Value="28" />
         <Setter Property="MinHeight" Value="28" />
         <Setter Property="MaxHeight" Value="28" />
