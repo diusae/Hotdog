@@ -44,7 +44,7 @@
 
     <!-- Default Button: the secondary look -->
     <Style Selector="Button">
-        <Setter Property="Background" Value="{DynamicResource SkuaSurfaceAltBrush}" />
+        <Setter Property="Background" Value="{DynamicResource SkuaSurfaceElevatedBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SkuaBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="CornerRadius" Value="8" />
@@ -93,7 +93,7 @@
         <Setter Property="Padding" Value="0" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="CornerRadius" Value="8" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -109,7 +109,7 @@
     <Style Selector="Button.danger-icon /template/ ContentPresenter#PART_ContentPresenter, Button.icon /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="CornerRadius" Value="8" />
     </Style>
     <Style Selector="Button.danger-icon:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button.icon:pointerover /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource SkuaNavHoverBrush}" />
@@ -153,10 +153,10 @@
 
     <!-- Secondary (default) button -->
     <Style Selector="Button.skua-button">
-        <Setter Property="Height" Value="32" />
-        <Setter Property="Padding" Value="12,0" />
-        <Setter Property="CornerRadius" Value="12" />
-        <Setter Property="Background" Value="{DynamicResource SkuaSurfaceAltBrush}" />
+        <Setter Property="Height" Value="34" />
+        <Setter Property="Padding" Value="14,0" />
+        <Setter Property="CornerRadius" Value="9" />
+        <Setter Property="Background" Value="{DynamicResource SkuaSurfaceElevatedBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SkuaBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Foreground" Value="{DynamicResource SkuaTextBrush}" />
@@ -296,7 +296,7 @@
         <Setter Property="Padding" Value="10,0" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="CornerRadius" Value="8" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Foreground" Value="{DynamicResource SkuaAccentBrush}" />
         <Setter Property="VerticalAlignment" Value="Center" />
@@ -323,7 +323,7 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="CornerRadius" Value="8" />
         <Setter Property="FontSize" Value="12" />
     </Style>
     <Style Selector="Button.top-nav-item /template/ ContentPresenter, ToggleButton.top-nav-item /template/ ContentPresenter">
@@ -390,7 +390,7 @@
         <Setter Property="Background" Value="{DynamicResource SkuaSurfaceAltBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SkuaBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="CornerRadius" Value="8" />
         <Setter Property="Foreground" Value="{DynamicResource SkuaTextBrush}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
