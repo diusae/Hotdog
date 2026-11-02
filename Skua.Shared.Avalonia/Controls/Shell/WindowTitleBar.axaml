@@ -38,7 +38,7 @@
       <TextBlock Text="{x:Static models:ProductIdentity.ProductMonogram}"
                  Foreground="{DynamicResource SkuaAccentForegroundBrush}"
                  FontSize="11"
-                 FontWeight="ExtraBold"
+                 FontWeight="Bold"
                  HorizontalAlignment="Center"
                  VerticalAlignment="Center" />
     </Grid>
