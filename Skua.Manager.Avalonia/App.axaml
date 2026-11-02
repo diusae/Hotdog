@@ -9,6 +9,7 @@
              xmlns:scriptRepo="clr-namespace:Skua.Shared.Avalonia.ViewModels.ScriptRepo;assembly=Skua.Shared.Avalonia"
              xmlns:sharedScriptRepo="clr-namespace:Skua.Shared.Avalonia.Controls.ScriptRepo;assembly=Skua.Shared.Avalonia"
              xmlns:views="clr-namespace:Skua.Manager.Avalonia.Views"
+             xmlns:models="clr-namespace:Skua.Core.Models;assembly=Skua.Core.Models"
              x:Class="Skua.Manager.Avalonia.App"
              RequestedThemeVariant="Dark">
     <Application.Resources>
@@ -33,12 +34,12 @@
     <TrayIcon.Icons>
         <TrayIcons>
             <TrayIcon Icon="avares://Skua.Shared.Avalonia/Assets/SkuaIcon.ico"
-                      ToolTipText="HOT DOG Manager"
+                      ToolTipText="{x:Static models:ProductIdentity.ManagerName}"
                       Clicked="TrayIcon_Clicked">
                 <TrayIcon.Menu>
                     <NativeMenu>
                         <NativeMenuItem Header="Show Manager" Click="TrayShowManager_Click" />
-                        <NativeMenuItem Header="HOT DOG Client" Click="TrayLaunchClient_Click" />
+                        <NativeMenuItem Header="{x:Static models:ProductIdentity.ClientMenuName}" Click="TrayLaunchClient_Click" />
                         <NativeMenuItem Header="Update Scripts" Click="TrayUpdateScripts_Click" />
                         <NativeMenuItem Header="Reset Scripts" Click="TrayResetScripts_Click" />
                         <NativeMenuItem Header="Check Client Update" Click="TrayCheckUpdate_Click" />
