@@ -16,11 +16,11 @@
 
     <!-- Sleek Custom ControlTemplate for ComboBox following Pure Neutral Dark UI -->
     <Style Selector="ComboBox">
-        <Setter Property="Height" Value="32" />
+        <Setter Property="Height" Value="34" />
         <Setter Property="MinHeight" Value="0" />
         <Setter Property="MinWidth" Value="56" />
-        <Setter Property="Padding" Value="10,0" />
-        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="Padding" Value="11,0" />
+        <Setter Property="CornerRadius" Value="9" />
         <Setter Property="Background" Value="{DynamicResource SkuaSurfaceAltBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SkuaBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
