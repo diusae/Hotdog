@@ -717,7 +717,7 @@ public class AvaloniaThemeService : IThemeService, INotifyPropertyChanged
             }
         }
 
-        return Color.FromRgb(0x60, 0x7D, 0x8B);
+        return Color.Parse(ProductIdentity.PrimaryAccentHex);
     }
 
     private void SetSelectedColorSilently(Color color)
