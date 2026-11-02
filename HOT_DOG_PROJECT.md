@@ -96,7 +96,7 @@ dotnet restore Skua.sln
 dotnet build Skua.sln -c Release -p:WarningLevel=0 --nologo
 ```
 
-The user reported a successful local Windows baseline on 2026-11-03 using .NET SDK 10.0.303: `dotnet restore Skua.sln` completed successfully, and `dotnet build Skua.sln -c Release -p:WarningLevel=0 --nologo` built all 12 solution projects successfully in 39.2 seconds. This confirms compilation only; GUI startup, Flash/COM integration, game connection, scripts and plugins have not yet been runtime-tested.
+The user reported a successful local Windows baseline on 2026-11-03 using .NET SDK 10.0.303: `dotnet restore Skua.sln` completed successfully, and `dotnet build Skua.sln -c Release -p:WarningLevel=0 --nologo` built all 12 solution projects successfully in 39.2 seconds. The user also confirmed that the client executable starts, displays its window and is currently stable. This does not yet verify Manager startup, Flash/COM integration, game connection, scripts or plugins.
 
 Important: `BuildProject.bat` is not a passive build command. When run from a branch named `main`, it performs Git synchronization steps involving `origin` and `upstream`, and may push to `origin`. Do not run it from `main` until its behavior and remotes are deliberately configured. Prefer the explicit `dotnet restore` / `dotnet build` commands for the initial baseline check.
 
@@ -133,9 +133,9 @@ Before distributing Hot Dog binaries or source, inspect the upstream and inherit
 - [ ] Clone the Hot Dog repository locally.
 - [x] Restore NuGet dependencies (user-reported success, .NET SDK 10.0.303).
 - [x] Build the solution in Release (all 12 projects succeeded, 39.2 seconds; user-reported).
-- [ ] Launch Manager and client on Windows.
+- [x] Launch the client executable on Windows; user confirms the client window opens and is currently stable.
+- [ ] Launch the Manager separately.
 - [ ] Record exact build errors/warnings, if any.
-- [ ] Launch the Manager and client on Windows.
 - [ ] Verify a minimal existing workflow before changing code.
 
 ### Phase 2 — First Hot Dog identity changes
@@ -154,4 +154,4 @@ Only after the baseline is verified:
 
 ## 10. Current status
 
-This file is documentation only. The user has confirmed a successful Release compilation, but runtime startup and gameplay behavior are not yet verified. No application source files, project files, dependencies, scripts, settings or runtime behavior were changed by this baseline documentation step.
+This file is documentation only. The user confirmed that the Release build succeeds and that launching `Skua.App.Avalonia/bin/Release/net10.0-windows/VibeSkua.exe` opens the client window; the client is currently stable. This verifies client process startup and initial UI display only. Manager startup, Flash/game integration, game connection, scripts and plugins have not yet been separately verified. No application source files, project files, dependencies, scripts, settings or runtime behavior were changed by this documentation update.
