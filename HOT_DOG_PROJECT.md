@@ -165,13 +165,26 @@ Only after the baseline is verified and identity dependencies are mapped:
 - [ ] Rebuild and verify the new central identity and HOT DOG theme palette on the user's Windows machine.
 - [x] Enable the Windows build workflow on pushes to `hot-dog-dev`.
 
-### Phase 3 — Product improvements
+### Phase 3 — HOT DOG visual overhaul
+- [x] Establish shared HOT DOG light/dark colour tokens and brand palette.
+- [x] Standardise shared buttons, toggles, text inputs, combo boxes, cards, tabs, menus, expanders and list controls.
+- [x] Refresh shared window title bar dimensions, controls and HOT DOG monogram.
+- [x] Refresh Client top navigation and multi-client tab strip proportions.
+- [x] Rebuild Manager primary navigation as a dedicated left sidebar.
+- [x] Add a documented shared design system in `HOT_DOG_DESIGN_SYSTEM.md`.
+- [ ] Build and visually verify the design-foundation change on Windows.
+- [ ] Create original native app, tray and installer icon assets.
+- [ ] Redesign the Client's high-traffic pages individually.
+- [ ] Redesign Manager pages individually, preserving all commands and bindings.
+- [ ] Audit dialogs, tables, popups, notifications, plugin screens, accessibility and DPI scaling.
+
+### Phase 4 — Product improvements
 - [ ] Establish feature priorities with the user.
 - [ ] Add tests for testable Core behavior.
 - [ ] Improve existing systems incrementally.
 - [ ] Add new modules without breaking existing contracts.
 
-Current milestone: the user confirmed the original baseline Release build succeeds, and after the first visible-label rebrand confirmed both the client and Manager windows open. The current branch also contains a central `ProductIdentity` class, a HOT DOG dark theme preset, an orange/mustard accent palette, and a Windows build workflow trigger for pushes to `hot-dog-dev`. The latest central identity and theme changes have been committed but have not yet been rebuilt by the user. Existing saved themes remain selected; the new HOT DOG preset is added to the built-in theme list and is first only on fresh settings. Executable/assembly identities, AppData locations and migration logic, IPC/mutex names, temporary tab paths, plugin contracts, update identifiers and current Skua icon/artwork assets remain unchanged. Manager startup is confirmed; Flash/game integration, game connection, scripts and plugins have not yet been separately verified.
+Current milestone: the user confirmed the original baseline Release build succeeds and the first visible-label rebrand opens in both Client and Manager. The current branch now includes the first full design-foundation pass: shared dark/light colour tokens, updated reusable control styles, a 40px shared title bar with an HOT DOG monogram, refreshed Client navigation sizing, and a new Manager left-sidebar layout. The design system is documented in `HOT_DOG_DESIGN_SYSTEM.md`. These latest visual changes have not yet been rebuilt or visually verified by the user. Executable/assembly identities, AppData locations and migration logic, saved themes, IPC/mutex names, temporary tab paths, plugin contracts, game workflows and update identifiers remain unchanged. Native app/tray/installer icons still require original HOT DOG assets. Individual Client and Manager pages still need screen-by-screen redesign and testing.
 
 ## 10. Current status
 
