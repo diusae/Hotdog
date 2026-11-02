@@ -5,9 +5,10 @@
         xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:sharedShell="clr-namespace:Skua.Shared.Avalonia.Controls.Shell;assembly=Skua.Shared.Avalonia"
         xmlns:controls="clr-namespace:Skua.App.Avalonia.Controls"
+        xmlns:models="clr-namespace:Skua.Core.Models;assembly=Skua.Core.Models"
         x:Class="Skua.App.Avalonia.Views.TabbedHostWindow"
         Classes="skua"
-        Title="HOT DOG" Icon="avares://Skua.Shared.Avalonia/Assets/SkuaIcon.ico" Height="700" Width="1100"
+        Title="{x:Static models:ProductIdentity.ProductName}" Icon="avares://Skua.Shared.Avalonia/Assets/SkuaIcon.ico" Height="700" Width="1100"
         WindowStartupLocation="CenterScreen"
         Background="{DynamicResource SkuaPageBrush}"
         SystemDecorations="BorderOnly"
@@ -15,7 +16,7 @@
         ExtendClientAreaChromeHints="NoChrome"
         ExtendClientAreaTitleBarHeightHint="32">
     <Grid RowDefinitions="32,Auto,*">
-        <sharedShell:WindowTitleBar x:Name="MainTitleBar" Grid.Row="0" TitleText="HOT DOG" />
+        <sharedShell:WindowTitleBar x:Name="MainTitleBar" Grid.Row="0" TitleText="{x:Static models:ProductIdentity.ProductName}" />
 
         <!-- Top Tab Bar & Army Bar -->
         <Border Grid.Row="1"
