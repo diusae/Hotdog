@@ -1,14 +1,15 @@
 using Avalonia.Media;
 using System;
 using System.Globalization;
+using Skua.Core.Models;
 
 namespace Skua.Shared.Avalonia.Services;
 
 public class ThemeItem
 {
-    public string Name { get; set; } = "Skua";
+    public string Name { get; set; } = ProductIdentity.DefaultThemeName;
     public bool IsDarkTheme { get; set; } = true;
-    public Color PrimaryColor { get; set; } = Color.Parse("#FF607D8B");
+    public Color PrimaryColor { get; set; } = Color.Parse(ProductIdentity.PrimaryAccentHex);
     public Color SecondaryColor { get; set; } = Color.Parse("#FF607D8B");
     public Color PrimaryForegroundColor { get; set; } = Color.Parse("#FF000000");
     public Color SecondaryForegroundColor { get; set; } = Color.Parse("#FF000000");
