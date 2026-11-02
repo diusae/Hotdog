@@ -12,7 +12,7 @@ public class ThemeItem
     public Color PrimaryColor { get; set; } = Color.Parse(ProductIdentity.PrimaryAccentHex);
     public Color SecondaryColor { get; set; } = Color.Parse(ProductIdentity.SecondaryAccentHex);
     public Color PrimaryForegroundColor { get; set; } = Color.Parse(ProductIdentity.AccentForegroundHex);
-    public Color SecondaryForegroundColor { get; set; } = Color.Parse("#FF000000");
+    public Color SecondaryForegroundColor { get; set; } = Color.Parse(ProductIdentity.AccentForegroundHex);
     public bool UseColorAdjustment { get; set; } = false;
     public float DesiredContrastRatio { get; set; } = 4.5f;
     public string ContrastValue { get; set; } = "Medium";
@@ -39,10 +39,10 @@ public class ThemeItem
         {
             Name = parts[0],
             IsDarkTheme = parts[1].Equals("Dark", StringComparison.OrdinalIgnoreCase),
-            PrimaryColor = ParseColorOrDefault(parts[2], Color.Parse("#FF607D8B")),
-            SecondaryColor = ParseColorOrDefault(parts[3], Color.Parse("#FF607D8B")),
-            PrimaryForegroundColor = ParseColorOrDefault(parts[4], Color.Parse("#FF000000")),
-            SecondaryForegroundColor = ParseColorOrDefault(parts[5], Color.Parse("#FF000000"))
+            PrimaryColor = ParseColorOrDefault(parts[2], Color.Parse(ProductIdentity.SecondaryAccentHex)),
+            SecondaryColor = ParseColorOrDefault(parts[3], Color.Parse(ProductIdentity.SecondaryAccentHex)),
+            PrimaryForegroundColor = ParseColorOrDefault(parts[4], Color.Parse(ProductIdentity.AccentForegroundHex)),
+            SecondaryForegroundColor = ParseColorOrDefault(parts[5], Color.Parse(ProductIdentity.AccentForegroundHex))
         };
 
         if (parts.Length > 6 && bool.TryParse(parts[6], out bool useAdj))
