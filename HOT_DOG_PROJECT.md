@@ -91,14 +91,14 @@ Client-owned files/directories are initialized through `ClientFileSources` and `
 
 The first read-only identity audit found several coupled identifiers. They must not be changed as one blind rename:
 
-- The client window and tabbed host display the product name in `Skua.App.Avalonia/Views/TabbedHostWindow.axaml`; the current window and title-bar text are both `VibeSkua`.
-- The client executable and assembly are currently `VibeSkua.exe` / `VibeSkua`. The Manager's `SkuaExecutableLocator` explicitly searches for `VibeSkua.exe`, with `Skua.exe` as a legacy fallback.
+- The original client window and tabbed host labels were `VibeSkua`. The current branch now resolves visible client labels through `Skua.Core.Models/ProductIdentity.cs` and displays `HOT DOG`.
+- The client executable and assembly remain `VibeSkua.exe` / `VibeSkua` for compatibility. The Manager's `SkuaExecutableLocator` explicitly searches for `VibeSkua.exe`, with `Skua.exe` as a legacy fallback.
 - The client project declares assembly metadata `Skua.ClientId=VibeSkuaAvalonia`.
 - The tabbed-host single-instance and inter-process communication names are currently `VibeSkuaTabHostPipe` and `VibeSkuaTabHostMutex`; per-instance names are derived from these.
 - Client data currently lives under `%APPDATA%\\VibeSkua`. The code can copy legacy data from `%APPDATA%\\Skua` into that directory on first initialization, guarded by `Global\\VibeSkua.Migration.Init` and a migration marker. The existing migration excludes the top-level `plugins` directory from that copy.
 - User data includes settings, scripts, themes, options, plugins and supporting JSON/cache files. A future move to a `HotDog` data directory must explicitly preserve existing VibeSkua data and account for the existing legacy Skua migration; simply changing the folder constant would risk making the user's existing setup appear empty.
 
-**Safe first identity milestone:** change only user-visible product labels and brand artwork after their exact locations are mapped. Keep executable names, assembly identities, AppData paths, IPC/mutex names, plugin contracts and update identifiers unchanged during that first step. Plan and test any deeper identity migration separately.
+**Safe first identity milestone:** change user-visible product labels and add brand styling while keeping executable names, assembly identities, AppData paths, IPC/mutex names, plugin contracts and update identifiers unchanged. Plan and test any deeper identity migration separately.
 
 ## 6. Build and safety notes
 
@@ -147,7 +147,7 @@ Before distributing Hot Dog binaries or source, inspect the upstream and inherit
 - [x] Restore NuGet dependencies (user-reported success, .NET SDK 10.0.303).
 - [x] Build the solution in Release (all 12 projects succeeded, 39.2 seconds; user-reported).
 - [x] Launch the client executable on Windows; user confirms the client window opens and is currently stable.
-- [ ] Launch the Manager separately.
+- [x] Launch the Manager separately; user confirms both client and Manager windows open.
 - [ ] Record exact build errors/warnings, if any.
 - [ ] Verify a minimal existing workflow before changing code.
 
@@ -157,16 +157,21 @@ Only after the baseline is verified and identity dependencies are mapped:
 - [x] Change the visible client and Manager labels to **HOT DOG** in the two application shells and About page.
 - [x] Keep executable names, assembly metadata, AppData paths, IPC/mutex names, temporary tab paths, plugin contracts and update identifiers unchanged in this first branding pass.
 - [ ] Create and integrate original HOT DOG icon / artwork assets; existing Skua artwork is intentionally still in place.
-- [ ] Define a central product identity/configuration for future labels and packaging.
+- [x] Add a built-in HOT DOG dark theme preset with orange and mustard accents. New installs use it as the first default preset; an existing saved `CurrentTheme` is preserved.
+- [x] Define `Skua.Core.Models.ProductIdentity` as the central source for user-visible product names and initial brand colors.
 - [ ] Plan settings/data directory compatibility.
 - [ ] Plan process, IPC, mutex and update-channel identity changes.
-- [ ] Rebuild and verify the renamed UI on the user's Windows machine before expanding the rename scope.
+- [x] Rebuild and verify the first visible-label rebrand on the user's Windows machine; user confirms both client and Manager open.
+- [ ] Rebuild and verify the new central identity and HOT DOG theme palette on the user's Windows machine.
+- [x] Enable the Windows build workflow on pushes to `hot-dog-dev`.
 
 ### Phase 3 — Product improvements
 - [ ] Establish feature priorities with the user.
 - [ ] Add tests for testable Core behavior.
 - [ ] Improve existing systems incrementally.
 - [ ] Add new modules without breaking existing contracts.
+
+Current milestone: the user confirmed the original baseline Release build succeeds, and after the first visible-label rebrand confirmed both the client and Manager windows open. The current branch also contains a central `ProductIdentity` class, a HOT DOG dark theme preset, an orange/mustard accent palette, and a Windows build workflow trigger for pushes to `hot-dog-dev`. The latest central identity and theme changes have been committed but have not yet been rebuilt by the user. Existing saved themes remain selected; the new HOT DOG preset is added to the built-in theme list and is first only on fresh settings. Executable/assembly identities, AppData locations and migration logic, IPC/mutex names, temporary tab paths, plugin contracts, update identifiers and current Skua icon/artwork assets remain unchanged. Manager startup is confirmed; Flash/game integration, game connection, scripts and plugins have not yet been separately verified.
 
 ## 10. Current status
 
