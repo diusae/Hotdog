@@ -283,7 +283,7 @@ public partial class TabbedHostWindow : Window
         catch (Exception ex)
         {
             _isSpawning = false;
-            Trace.WriteLine($"VibeSkua child spawn failed: {ex}");
+            Trace.WriteLine($"HOT DOG child spawn failed: {ex}");
             Dispatcher.UIThread.Post(ProcessNextSpawn, DispatcherPriority.Background);
         }
     }
@@ -331,7 +331,7 @@ public partial class TabbedHostWindow : Window
         _initialArgs = initialArgs ?? Array.Empty<string>();
         InitializeComponent();
         LoadArmyJumpSettings();
-        Title = $"VibeSkua V{Skua.Core.Models.ClientFileSources.DisplayVersion}";
+        Title = $"HOT DOG V{Skua.Core.Models.ClientFileSources.DisplayVersion}";
         MainTitleBar.TitleText = Title;
 
         try
@@ -782,7 +782,7 @@ public partial class TabbedHostWindow : Window
                                     }
                                     catch (Exception ex)
                                     {
-                                        Trace.WriteLine($"VibeSkua artwork sync failed: {ex.GetType().Name}: {ex.Message}");
+                                        Trace.WriteLine($"HOT DOG artwork sync failed: {ex.GetType().Name}: {ex.Message}");
                                     }
                                 });
                             }
@@ -813,7 +813,7 @@ public partial class TabbedHostWindow : Window
                                     }
                                     catch (Exception ex)
                                     {
-                                        Trace.WriteLine($"VibeSkua theme sync failed: {ex.GetType().Name}: {ex.Message}");
+                                        Trace.WriteLine($"HOT DOG theme sync failed: {ex.GetType().Name}: {ex.Message}");
                                     }
                                 });
                             }
@@ -2016,7 +2016,7 @@ public partial class TabbedHostWindow : Window
             IScriptServers? scriptServers = Ioc.Default.GetService<IScriptServers>();
             if (scriptServers is null)
             {
-                Ioc.Default.GetService<IDialogService>()?.ShowMessageBox("The server service is unavailable. Please restart VibeSkua and try again.", "Change Server for All");
+                Ioc.Default.GetService<IDialogService>()?.ShowMessageBox("The server service is unavailable. Please restart HOT DOG and try again.", "Change Server for All");
                 return;
             }
 
@@ -2780,7 +2780,7 @@ public partial class TabbedHostWindow : Window
             {
                 p.Dispose();
                 _isSpawning = false;
-                Trace.WriteLine($"VibeSkua failed to start child process for tab '{tabName}': {ex}");
+                Trace.WriteLine($"HOT DOG failed to start child process for tab '{tabName}': {ex}");
                 Dispatcher.UIThread.Post(() =>
                 {
                     if (_tabs.ContainsKey(newTab))
