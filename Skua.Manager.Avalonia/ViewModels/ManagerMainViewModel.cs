@@ -19,11 +19,11 @@ public partial class ManagerMainViewModel : ObservableRecipient
         _selectedTab = Tabs[0];
         _dialogService = dialogService;
         _settingsService = settingsService;
-        _title = $"HOT DOG Manager V{ClientFileSources.DisplayVersion}";
+        _title = $"{ProductIdentity.ManagerName} V{ClientFileSources.DisplayVersion}";
     }
 
     [ObservableProperty]
-    private string _title = "HOT DOG Manager";
+    private string _title = ProductIdentity.ManagerName;
 
     [RelayCommand]
     private void ShowManager()
