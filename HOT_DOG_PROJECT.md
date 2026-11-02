@@ -96,7 +96,7 @@ dotnet restore Skua.sln
 dotnet build Skua.sln -c Release -p:WarningLevel=0 --nologo
 ```
 
-Build success has **not** yet been verified on the user's local Windows machine.
+The user reported a successful local Windows baseline on 2026-11-03 using .NET SDK 10.0.303: `dotnet restore Skua.sln` completed successfully, and `dotnet build Skua.sln -c Release -p:WarningLevel=0 --nologo` built all 12 solution projects successfully in 39.2 seconds. This confirms compilation only; GUI startup, Flash/COM integration, game connection, scripts and plugins have not yet been runtime-tested.
 
 Important: `BuildProject.bat` is not a passive build command. When run from a branch named `main`, it performs Git synchronization steps involving `origin` and `upstream`, and may push to `origin`. Do not run it from `main` until its behavior and remotes are deliberately configured. Prefer the explicit `dotnet restore` / `dotnet build` commands for the initial baseline check.
 
@@ -131,8 +131,9 @@ Before distributing Hot Dog binaries or source, inspect the upstream and inherit
 
 ### Phase 1 — Local baseline verification
 - [ ] Clone the Hot Dog repository locally.
-- [ ] Restore NuGet dependencies.
-- [ ] Build the solution in Release.
+- [x] Restore NuGet dependencies (user-reported success, .NET SDK 10.0.303).
+- [x] Build the solution in Release (all 12 projects succeeded, 39.2 seconds; user-reported).
+- [ ] Launch Manager and client on Windows.
 - [ ] Record exact build errors/warnings, if any.
 - [ ] Launch the Manager and client on Windows.
 - [ ] Verify a minimal existing workflow before changing code.
@@ -153,4 +154,4 @@ Only after the baseline is verified:
 
 ## 10. Current status
 
-This file is documentation only. It does not claim that the solution has been built or run successfully. No application source files, project files, dependencies, scripts, settings or runtime behavior were changed by this baseline documentation step.
+This file is documentation only. The user has confirmed a successful Release compilation, but runtime startup and gameplay behavior are not yet verified. No application source files, project files, dependencies, scripts, settings or runtime behavior were changed by this baseline documentation step.
