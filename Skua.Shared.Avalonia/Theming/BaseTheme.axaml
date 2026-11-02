@@ -26,7 +26,8 @@
     <Style Selector="Window, Window.skua">
         <Setter Property="Background" Value="{DynamicResource SkuaPageBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource SkuaTextBrush}" />
-        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
     </Style>
 </Styles>
 
