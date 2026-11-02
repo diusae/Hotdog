@@ -1,9 +1,10 @@
-name: Build VibeSkua
+name: Build HOT DOG
 
 on:
   push:
     branches:
       - main
+      - hot-dog-dev
   pull_request:
     branches:
       - main
