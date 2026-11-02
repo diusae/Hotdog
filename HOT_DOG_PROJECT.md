@@ -153,11 +153,14 @@ Before distributing Hot Dog binaries or source, inspect the upstream and inherit
 
 ### Phase 2 — First Hot Dog identity changes
 Only after the baseline is verified and identity dependencies are mapped:
-- [ ] Define a central product identity/configuration.
-- [ ] Plan safe application display-name and icon changes.
+- [x] Map the key visible product-label locations in the client, Manager, tray menu, title bar and About page.
+- [x] Change the visible client and Manager labels to **HOT DOG** in the two application shells and About page.
+- [x] Keep executable names, assembly metadata, AppData paths, IPC/mutex names, temporary tab paths, plugin contracts and update identifiers unchanged in this first branding pass.
+- [ ] Create and integrate original HOT DOG icon / artwork assets; existing Skua artwork is intentionally still in place.
+- [ ] Define a central product identity/configuration for future labels and packaging.
 - [ ] Plan settings/data directory compatibility.
 - [ ] Plan process, IPC, mutex and update-channel identity changes.
-- [ ] Implement identity changes in focused commits and test them.
+- [ ] Rebuild and verify the renamed UI on the user's Windows machine before expanding the rename scope.
 
 ### Phase 3 — Product improvements
 - [ ] Establish feature priorities with the user.
@@ -167,4 +170,4 @@ Only after the baseline is verified and identity dependencies are mapped:
 
 ## 10. Current status
 
-This file is documentation only. The user confirmed that the Release build succeeds and that launching `Skua.App.Avalonia/bin/Release/net10.0-windows/VibeSkua.exe` opens the client window; the client is currently stable. This verifies client process startup and initial UI display only. Manager startup, Flash/game integration, game connection, scripts and plugins have not yet been separately verified. No application source files, project files, dependencies, scripts, settings or runtime behavior were changed by this documentation update.
+Current milestone: the user confirmed the baseline Release build succeeds and the client window opens stably. The first branding pass has been committed on `hot-dog-dev`: client window/title-bar labels, Manager title, Manager tray labels, shared title-bar default, and the About page heading now display HOT DOG. This is a user-interface text change only. Executable/assembly identities, AppData locations and migration logic, IPC/mutex names, temporary tab paths, plugin contracts, update identifiers and existing Skua icon/artwork assets were intentionally left unchanged. The modified solution has not yet been rebuilt by the user; Manager startup and deeper game/Flash/script/plugin workflows remain unverified.
