@@ -23,7 +23,7 @@
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="FontSize" Value="12" />
         <Setter Property="FontWeight" Value="SemiBold" />
-        <Setter Property="CornerRadius" Value="6" />
+        <Setter Property="CornerRadius" Value="8" />
         <Setter Property="Margin" Value="1,0" />
         <Setter Property="Template">
             <ControlTemplate TargetType="MenuItem">
@@ -96,7 +96,7 @@
         <Setter Property="Background" Value="{DynamicResource SkuaSurfaceBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SkuaBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="CornerRadius" Value="10" />
         <Setter Property="Padding" Value="4" />
         <Setter Property="MinWidth" Value="220" />
     </Style>
@@ -105,7 +105,7 @@
         <Setter Property="Background" Value="{DynamicResource SkuaSurfaceBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SkuaBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="CornerRadius" Value="10" />
         <Setter Property="Padding" Value="8" />
     </Style>
 
@@ -113,7 +113,7 @@
         <Setter Property="Background" Value="{DynamicResource SkuaSurfaceBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource SkuaBorderBrush}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="CornerRadius" Value="10" />
         <Setter Property="Padding" Value="4" />
         <Setter Property="MinWidth" Value="220" />
     </Style>
