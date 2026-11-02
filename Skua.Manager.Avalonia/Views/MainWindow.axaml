@@ -5,17 +5,17 @@
         xmlns:sharedShell="clr-namespace:Skua.Shared.Avalonia.Controls.Shell;assembly=Skua.Shared.Avalonia"
         x:Class="Skua.Manager.Avalonia.Views.MainWindow"
         Classes="skua"
-        d:DesignWidth="850"
-        d:DesignHeight="500"
+        d:DesignWidth="1080"
+        d:DesignHeight="700"
         Title="{Binding Title}"
-        Width="850"
-        Height="500"
+        Width="1080"
+        Height="700"
         WindowStartupLocation="CenterScreen"
         Icon="avares://Skua.Shared.Avalonia/Assets/SkuaIcon.ico"
         SystemDecorations="BorderOnly"
         ExtendClientAreaToDecorationsHint="True"
         ExtendClientAreaChromeHints="NoChrome"
-        ExtendClientAreaTitleBarHeightHint="32">
+        ExtendClientAreaTitleBarHeightHint="40">
 
     <!-- This root class enables shared shell selectors from Theme.axaml (Window.skua ...). -->
     <Grid>
@@ -31,8 +31,8 @@
 
         <!-- Top Nav -->
         <DockPanel Grid.Row="1"
-                   Height="44"
-                   Margin="8,4,8,4">
+                   Height="50"
+                   Margin="12,8,12,8">
             <ListBox Classes="top-tabs-client"
                      ItemsSource="{Binding Tabs}"
                      SelectedItem="{Binding SelectedTab}"
