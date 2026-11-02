@@ -331,7 +331,7 @@ public partial class TabbedHostWindow : Window
         _initialArgs = initialArgs ?? Array.Empty<string>();
         InitializeComponent();
         LoadArmyJumpSettings();
-        Title = $"HOT DOG V{Skua.Core.Models.ClientFileSources.DisplayVersion}";
+        Title = $"{Skua.Core.Models.ProductIdentity.ProductName} V{Skua.Core.Models.ClientFileSources.DisplayVersion}";
         MainTitleBar.TitleText = Title;
 
         try
